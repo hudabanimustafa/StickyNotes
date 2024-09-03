@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Note</title>
+</head>
+<body>
+<h1>Add New Sticky Note</h1>
+<form th:action="@{/save}" th:object="${note}" method="post">
+    <label>Title:</label>
+    <input type="text" th:field="*{title}" required />
+    <br/>
+    <label>Content:</label>
+    <textarea th:field="*{content}" required></textarea>
+    <br/>
+    <label>Color:</label>
+    <input type="color" th:field="*{color}" />
+    <br/>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
